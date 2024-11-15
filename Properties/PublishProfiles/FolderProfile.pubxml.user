@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <_PublishTargetUrl>C:\Users\T470\Documents\Projects\BlazorAppCarsCrud\bin\Release\net8.0\publish\</_PublishTargetUrl>
+    <History>True|2024-11-15T04:05:09.4131277Z||;True|2024-11-14T22:03:29.7913060-06:00||;True|2024-11-14T05:56:57.6688370-06:00||;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,245 @@
+﻿@page "/"
+
+@rendermode InteractiveServer
+@using BlazorAppCarsCrud.Models
+@using BlazorAppCarsCrud.Services
+@inject Blazored.LocalStorage.ILocalStorageService LocalStorage
+@inject CarService CarService
+<PageTitle>Home</PageTitle>
+
+<div class="row">
+    <div class="col-lg-12 mx-auto">
+        <h2 class="text-center text-primary">Car Management</h2>
+
+        @if (!isAdding)
+        {
+            <button type="button" @onclick="()=>ShowAdd()" class="btn btn-primary">New</button>
+
+        }
+       
+        @if (isAdding)
+        {
+            <div class="col-lg-6 mx-auto 0">
+                <h3 class="text-center text-primary">@(newCar.Id>0 ? "Update Car" : "Register new Car")</h3>
+              <EditForm Model="@newCar" OnValidSubmit="Add">
+                    <DataAnnotationsValidator />
+                    <ValidationSummary />
+                  <input @bind="newCar.Id" hidden="true"/> 
+                  <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Title</label>
+                        <input @bind=newCar.Title class="form-control" />
+                        <ValidationMessage For="@(()=> newCar.Title)"  />
+                       
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Model</label>
+                        <input @bind=newCar.Model class="form-control" />
+                        <ValidationMessage For="@(()=> newCar.Model)"  />
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Description</label>
+                        <input @bind=newCar.Description class="form-control" />
+                        <ValidationMessage For="@(()=> newCar.Description)"  />
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Price</label>
+                        <input @bind=newCar.Price class="form-control" />
+                        <ValidationMessage For="@(()=> newCar.Price)"  />
+                    </div>
+                    <div class="mb-3 text-center">
+                        <button type="submit" class="btn btn-primary" >@(newCar.Id>0 ? "Update Car" : "Save Car")</button>
+                        <button class="btn btn-danger" @onclick="CancelAdding">Cancel</button>
+
+                    </div>
+                </EditForm>
+               
+            </div>
+        }
+
+        @if (cars==null)
+        {
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        }
+        else
+        {
+
+            <div class="col-lg-6 mx-auto 0">
+                <div class="mb-3">
+                    <input @bind="search" placeholder="Search..." />
+                    <button class="btn btn-primary" @onclick="searchCars">Search</button>
+                </div>
+            </div>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+
+                        <th scope="col">Title</th>
+                        <th scope="col">Model</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Options</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in cars)
+                    {
+                        <tr>
+
+                            <td>@item.Title</td>
+                            <td>@item.Model</td>
+                            <td>@item.Description</td>
+                            <td>@item.Price $$</td>
+                            <td>@item.CreationDate</td>
+                            <td>
+                                <button type="button" @onclick="() => EditCar(item.Id)" class="btn btn-success">Edit</button>
+                                <button type="button" @onclick="()=> DeleteCar(item.Id)" class="btn btn-danger">Delete</button>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+
+     
+    </div>
+</div>
+
+@code {
+    private List<Car> cars = new();
+
+
+    private Car newCar = new Car();
+
+    private bool isAdding = false;
+    private bool isEditing = false;
+    private bool isInitialized = false;
+    private bool showSpinnerEdit = false;
+    private bool showSpinnerAdd = false;
+    private bool showFormEdit = false;
+    private bool showFormAdd = false;
+    private string search;
+    protected override async Task OnInitializedAsync()
+    {
+        // if (firstRender)
+        // {
+        // await LoadCars();
+        // isInitialized = true;
+        // StateHasChanged(); // Forzar la actualización de la vista después de cargar los datos
+        //  }
+
+        searchCars();
+    }
+
+    private List<Car> GetDefaultCars()
+    {
+        return new List<Car>
+        {
+            new Car { Id = 1, Title = "Toyota Corolla", Model = "2022",Description="Description here...", Price = 20000, CreationDate = DateTime.Now },
+            new Car { Id = 2, Title = "Honda Civic", Model = "2021",Description="Description here...", Price = 22000, CreationDate = DateTime.Now },
+            new Car { Id = 3, Title = "Ford Mustang", Model = "2023",Description="Description here...", Price = 35000, CreationDate = DateTime.Now },
+            new Car { Id = 4, Title = "Chevrolet Camaro", Model = "2022",Description="Description here...", Price = 37000, CreationDate = DateTime.Now },
+            new Car { Id = 5, Title = "BMW 3 Series", Model = "2022",Description="Description here...", Price = 41000, CreationDate = DateTime.Now },
+            new Car { Id = 6, Title = "Mercedes-Benz C-Class", Model = "2021", Description="Description here...",Price = 42000, CreationDate = DateTime.Now },
+            new Car { Id = 7, Title = "Audi A4", Model = "2023",Description="Description here...", Price = 40000, CreationDate = DateTime.Now },
+            new Car { Id = 8, Title = "Tesla Model 3", Model = "2023",Description="Description here...", Price = 45000, CreationDate = DateTime.Now },
+            new Car { Id = 9, Title = "Hyundai Elantra", Model = "2022",Description="Description here...", Price = 21000, CreationDate = DateTime.Now },
+            new Car { Id = 10, Title = "Kia Optima", Model = "2022",Description="Description here...", Price = 23000, CreationDate = DateTime.Now }
+        };
+    }
+
+
+    private async Task LoadCars()
+    {
+        cars = await LocalStorage.GetItemAsync<List<Car>>("cars") ?? new List<Car>();
+        //if cars equals null get default values
+        if (!cars.Any())
+        {
+            cars = GetDefaultCars();
+            await SaveCars(); // Guardamos la lista inicial en LocalStorage
+        }
+
+    }
+
+    private async Task searchCars()
+    {
+        cars = string.IsNullOrWhiteSpace(search)
+               ? await CarService.Get()
+               : await CarService.GetBySearch(search);
+    }
+
+    private async Task SaveCars()
+    {
+        await LocalStorage.SetItemAsync("cars", cars);
+    }
+    private void ShowAdd()
+    {
+        isAdding = true;
+        showFormAdd = true;
+    }
+
+    private async Task Add()
+    {
+        if (newCar.Id>0)
+        {
+            //  await Update();
+            newCar.CreationDate = DateTime.Now;
+            var response = await CarService.Update(newCar);
+            Console.WriteLine("Update Car[ "+newCar.Id+"]");
+
+        }
+        else
+        {
+            // for localStorage
+            //   newCar.Id = cars.Any() ? cars.Max(c => c.Id) + 1 : 1;
+
+            newCar.CreationDate = DateTime.Now;
+            //    cars.Add(newCar);
+            var response = await CarService.Add(newCar);
+            Console.WriteLine("Adding new Car");
+        }
+
+        //  await SaveCars();
+        isAdding = false;
+        newCar = new();
+        cars = await CarService.Get();
+    }
+
+    private async Task EditCar(int id)
+    {
+        // newCar = cars.FirstOrDefault(c => c.Id == id);
+        newCar =await CarService.GetById(id);
+        isAdding = true;
+    }
+
+    private async Task Update()
+    {
+        //for local Storage
+        var Index = cars.FindIndex(c => c.Id == newCar.Id);
+        cars[Index] = newCar;
+
+        CancelAdding();
+        newCar = new();
+
+    }
+
+    private void CancelAdding()
+    {
+        isAdding = false;
+        newCar = new();
+    }
+
+
+
+    private async Task DeleteCar(int id)
+    {
+        //   cars.RemoveAll(c => c.Id == id);
+
+        //   await LocalStorage.SetItemAsync("cars", cars); // Guardado asincrónico
+
+        var response = await CarService.Delete(id);
+
+    }
+}
