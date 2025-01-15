@@ -10,8 +10,13 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
+// Leer configuración de variables de ambiente
+builder.Configuration.AddEnvironmentVariables();
+
+// Configurar el servicio de base de datos
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection")
+    ?? builder.Configuration["CloudConnection"];
 builder.Services.AddBlazoredLocalStorage();
-var connectionString = builder.Configuration.GetConnectionString("CloudConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(connectionString));
 builder.Services.AddScoped<CarService>();

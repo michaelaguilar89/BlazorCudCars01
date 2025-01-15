@@ -185,7 +185,7 @@
         if (newCar.Id>0)
         {
             //  await Update();
-            newCar.CreationDate = DateTime.Now;
+            newCar.CreationDate = DateTime.UtcNow;
             var response = await CarService.Update(newCar);
             Console.WriteLine("Update Car[ "+newCar.Id+"]");
 
@@ -195,7 +195,7 @@
             // for localStorage
             //   newCar.Id = cars.Any() ? cars.Max(c => c.Id) + 1 : 1;
 
-            newCar.CreationDate = DateTime.Now;
+            newCar.CreationDate = DateTime.UtcNow;
             //    cars.Add(newCar);
             var response = await CarService.Add(newCar);
             Console.WriteLine("Adding new Car");
