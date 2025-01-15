@@ -139,3 +139,10 @@ C:\Users\T470\Documents\Projects\BlazorAppCarsCrud\obj\Release\net8.0\refint\Bla
 C:\Users\T470\Documents\Projects\BlazorAppCarsCrud\obj\Release\net8.0\BlazorAppCarsCrud.pdb
 C:\Users\T470\Documents\Projects\BlazorAppCarsCrud\obj\Release\net8.0\BlazorAppCarsCrud.genruntimeconfig.cache
 C:\Users\T470\Documents\Projects\BlazorAppCarsCrud\obj\Release\net8.0\ref\BlazorAppCarsCrud.dll
+C:\Users\T470\Documents\Projects\BlazorAppCarsCrud\bin\Release\net8.0\BlazorAppCarsCrud.staticwebassets.endpoints.json
+C:\Users\T470\Documents\Projects\BlazorAppCarsCrud\bin\Release\net8.0\Npgsql.dll
+C:\Users\T470\Documents\Projects\BlazorAppCarsCrud\bin\Release\net8.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+C:\Users\T470\Documents\Projects\BlazorAppCarsCrud\obj\Release\net8.0\BlazorAppCarsCrud.sourcelink.json
+C:\Users\T470\Documents\Projects\BlazorAppCarsCrud\obj\Release\net8.0\staticwebassets.build.endpoints.json
+C:\Users\T470\Documents\Projects\BlazorAppCarsCrud\obj\Release\net8.0\staticwebassets\msbuild.BlazorAppCarsCrud.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+C:\Users\T470\Documents\Projects\BlazorAppCarsCrud\obj\Release\net8.0\staticwebassets.upToDateCheck.txt
