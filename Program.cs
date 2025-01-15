@@ -14,7 +14,7 @@ builder.Services.AddRazorComponents()
 builder.Configuration.AddEnvironmentVariables();
 
 // Configurar el servicio de base de datos
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection")
+var connectionString = builder.Configuration.GetConnectionString("CloudConnection")
     ?? builder.Configuration["CloudConnection"];
 builder.Services.AddBlazoredLocalStorage();
 builder.Services.AddDbContext<AppDbContext>(options =>
