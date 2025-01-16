@@ -16,20 +16,20 @@
             <button type="button" @onclick="()=>ShowAdd()" class="btn btn-primary">New</button>
 
         }
-       
+
         @if (isAdding)
         {
             <div class="col-lg-6 mx-auto 0">
                 <h3 class="text-center text-primary">@(newCar.Id>0 ? "Update Car" : "Register new Car")</h3>
-              <EditForm Model="@newCar" OnValidSubmit="Add">
+                <EditForm Model="@newCar" OnValidSubmit="Add">
                     <DataAnnotationsValidator />
                     <ValidationSummary />
-                  <input @bind="newCar.Id" hidden="true"/> 
-                  <div class="mb-3">
+                    <input @bind="newCar.Id" hidden="true"/> 
+                    <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Title</label>
                         <input @bind=newCar.Title class="form-control" />
                         <ValidationMessage For="@(()=> newCar.Title)"  />
-                       
+
                     </div>
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Model</label>
@@ -52,7 +52,7 @@
 
                     </div>
                 </EditForm>
-               
+
             </div>
         }
 
@@ -106,10 +106,10 @@
                     </tbody>
                 </table>
             }
-           
+
         }
 
-     
+
     </div>
 </div>
 
@@ -136,7 +136,7 @@
         // StateHasChanged(); // Forzar la actualización de la vista después de cargar los datos
         //  }
 
-       await searchCars();
+        await searchCars();
     }
 
     private List<Car> GetDefaultCars()
@@ -191,7 +191,7 @@
         if (newCar.Id>0)
         {
             //  await Update();
-            newCar.CreationDate = DateTime.UtcNow;
+            newCar.CreationDate = DateTime.SpecifyKind(DateTime.Now, DateTimeKind.Utc);
             var response = await CarService.Update(newCar);
             Console.WriteLine("Update Car[ "+newCar.Id+"]");
 
@@ -201,7 +201,7 @@
             // for localStorage
             //   newCar.Id = cars.Any() ? cars.Max(c => c.Id) + 1 : 1;
 
-            newCar.CreationDate = DateTime.UtcNow;
+            newCar.CreationDate = DateTime.SpecifyKind(DateTime.Now, DateTimeKind.Utc); 
             //    cars.Add(newCar);
             var response = await CarService.Add(newCar);
             Console.WriteLine("Adding new Car");

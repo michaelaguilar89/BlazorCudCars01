@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\T470\\Documents\\Projects\\BlazorAppCarsCrud\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{F33B8E4D-FD2D-4D4D-B882-CA51B6700BFC}|BlazorAppCarsCrud.csproj|c:\\users\\t470\\documents\\projects\\blazorappcarscrud\\components\\pages\\chatroom.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F33B8E4D-FD2D-4D4D-B882-CA51B6700BFC}|BlazorAppCarsCrud.csproj|solutionrelative:components\\pages\\chatroom.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{F33B8E4D-FD2D-4D4D-B882-CA51B6700BFC}|BlazorAppCarsCrud.csproj|c:\\users\\t470\\documents\\projects\\blazorappcarscrud\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{F33B8E4D-FD2D-4D4D-B882-CA51B6700BFC}|BlazorAppCarsCrud.csproj|solutionrelative:components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
@@ -27,12 +31,25 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "ChatRoom.razor",
+              "DocumentMoniker": "C:\\Users\\T470\\Documents\\Projects\\BlazorAppCarsCrud\\Components\\Pages\\ChatRoom.razor",
+              "RelativeDocumentMoniker": "Components\\Pages\\ChatRoom.razor",
+              "ToolTip": "C:\\Users\\T470\\Documents\\Projects\\BlazorAppCarsCrud\\Components\\Pages\\ChatRoom.razor",
+              "RelativeToolTip": "Components\\Pages\\ChatRoom.razor",
+              "ViewState": "AgIAAFUAAAAAAAAAAAAAwGkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-16T03:00:16.886Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Home.razor",
               "DocumentMoniker": "C:\\Users\\T470\\Documents\\Projects\\BlazorAppCarsCrud\\Components\\Pages\\Home.razor",
               "RelativeDocumentMoniker": "Components\\Pages\\Home.razor",
-              "ToolTip": "C:\\Users\\T470\\Documents\\Projects\\BlazorAppCarsCrud\\Components\\Pages\\Home.razor*",
-              "RelativeToolTip": "Components\\Pages\\Home.razor*",
-              "ViewState": "AgIAAD4AAAAAAAAAAAAAAEQAAAAYAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\T470\\Documents\\Projects\\BlazorAppCarsCrud\\Components\\Pages\\Home.razor",
+              "RelativeToolTip": "Components\\Pages\\Home.razor",
+              "ViewState": "AgIAALwAAAAAAAAAAAAAAL8AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-01-16T00:22:18.249Z",
               "EditorCaption": ""

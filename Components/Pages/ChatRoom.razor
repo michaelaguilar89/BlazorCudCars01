@@ -81,7 +81,7 @@
 
     private async Task SendMessage()
     {
-        newMessage.Date = DateTime.UtcNow;
+        newMessage.Date = DateTime.SpecifyKind(DateTime.Now, DateTimeKind.Utc); 
         await hubConnection.SendAsync("SendMessage",newMessage.Date,newMessage.User ,newMessage.Text);
 
 
