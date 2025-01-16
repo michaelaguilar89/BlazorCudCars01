@@ -14,6 +14,8 @@ namespace BlazorAppCarsCrud.Data
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<Car>().ToTable("Cars");
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<Message>().ToTable("Messages");
         }
     }
 }

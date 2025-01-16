@@ -71,36 +71,42 @@
                     <button class="btn btn-primary" @onclick="searchCars">Search</button>
                 </div>
             </div>
-            <table class="table table-striped">
-                <thead>
-                    <tr>
-
-                        <th scope="col">Title</th>
-                        <th scope="col">Model</th>
-                        <th scope="col">Description</th>
-                        <th scope="col">Price</th>
-                        <th scope="col">Date</th>
-                        <th scope="col">Options</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var item in cars)
-                    {
+            @if (cars==null)
+            {
+                <p>Loading...</p>
+            }else{
+                <table class="table table-striped">
+                    <thead>
                         <tr>
 
-                            <td>@item.Title</td>
-                            <td>@item.Model</td>
-                            <td>@item.Description</td>
-                            <td>@item.Price $$</td>
-                            <td>@item.CreationDate</td>
-                            <td>
-                                <button type="button" @onclick="() => EditCar(item.Id)" class="btn btn-success">Edit</button>
-                                <button type="button" @onclick="()=> DeleteCar(item.Id)" class="btn btn-danger">Delete</button>
-                            </td>
+                            <th scope="col">Title</th>
+                            <th scope="col">Model</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Options</th>
                         </tr>
-                    }
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in cars)
+                        {
+                            <tr>
+
+                                <td>@item.Title</td>
+                                <td>@item.Model</td>
+                                <td>@item.Description</td>
+                                <td>@item.Price $$</td>
+                                <td>@item.CreationDate</td>
+                                <td>
+                                    <button type="button" @onclick="() => EditCar(item.Id)" class="btn btn-success">Edit</button>
+                                    <button type="button" @onclick="()=> DeleteCar(item.Id)" class="btn btn-danger">Delete</button>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            }
+           
         }
 
      
@@ -130,7 +136,7 @@
         // StateHasChanged(); // Forzar la actualización de la vista después de cargar los datos
         //  }
 
-        searchCars();
+       await searchCars();
     }
 
     private List<Car> GetDefaultCars()

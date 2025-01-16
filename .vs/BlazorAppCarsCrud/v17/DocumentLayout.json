@@ -3,16 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\T470\\Documents\\Projects\\BlazorAppCarsCrud\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F33B8E4D-FD2D-4D4D-B882-CA51B6700BFC}|BlazorAppCarsCrud.csproj|c:\\users\\t470\\documents\\projects\\blazorappcarscrud\\migrations\\20250115233915_initial2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F33B8E4D-FD2D-4D4D-B882-CA51B6700BFC}|BlazorAppCarsCrud.csproj|solutionrelative:migrations\\20250115233915_initial2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F33B8E4D-FD2D-4D4D-B882-CA51B6700BFC}|BlazorAppCarsCrud.csproj|c:\\users\\t470\\documents\\projects\\blazorappcarscrud\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F33B8E4D-FD2D-4D4D-B882-CA51B6700BFC}|BlazorAppCarsCrud.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F33B8E4D-FD2D-4D4D-B882-CA51B6700BFC}|BlazorAppCarsCrud.csproj|c:\\users\\t470\\documents\\projects\\blazorappcarscrud\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{F33B8E4D-FD2D-4D4D-B882-CA51B6700BFC}|BlazorAppCarsCrud.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{F33B8E4D-FD2D-4D4D-B882-CA51B6700BFC}|BlazorAppCarsCrud.csproj|c:\\users\\t470\\documents\\projects\\blazorappcarscrud\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F33B8E4D-FD2D-4D4D-B882-CA51B6700BFC}|BlazorAppCarsCrud.csproj|solutionrelative:components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -35,40 +27,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "20250115233915_initial2.cs",
-              "DocumentMoniker": "C:\\Users\\T470\\Documents\\Projects\\BlazorAppCarsCrud\\Migrations\\20250115233915_initial2.cs",
-              "RelativeDocumentMoniker": "Migrations\\20250115233915_initial2.cs",
-              "ToolTip": "C:\\Users\\T470\\Documents\\Projects\\BlazorAppCarsCrud\\Migrations\\20250115233915_initial2.cs",
-              "RelativeToolTip": "Migrations\\20250115233915_initial2.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-15T23:39:17.145Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\T470\\Documents\\Projects\\BlazorAppCarsCrud\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\T470\\Documents\\Projects\\BlazorAppCarsCrud\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAABRAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-15T23:36:20.871Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\T470\\Documents\\Projects\\BlazorAppCarsCrud\\appsettings.json",
-              "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "C:\\Users\\T470\\Documents\\Projects\\BlazorAppCarsCrud\\appsettings.json",
-              "RelativeToolTip": "appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAACJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-01-15T22:07:29.022Z",
+              "Title": "Home.razor",
+              "DocumentMoniker": "C:\\Users\\T470\\Documents\\Projects\\BlazorAppCarsCrud\\Components\\Pages\\Home.razor",
+              "RelativeDocumentMoniker": "Components\\Pages\\Home.razor",
+              "ToolTip": "C:\\Users\\T470\\Documents\\Projects\\BlazorAppCarsCrud\\Components\\Pages\\Home.razor",
+              "RelativeToolTip": "Components\\Pages\\Home.razor",
+              "ViewState": "AgIAAIMAAAAAAAAAAAAAAIgAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-16T00:22:18.249Z",
               "EditorCaption": ""
             }
           ]
