@@ -5,7 +5,7 @@ namespace BlazorAppCarsCrud.Models
     public class Message
     {
         [Key]
-        public string Id { get; set; } = Guid.NewGuid().ToString(); // Genera GUID como string
+        public string Id { get; set; } = Guid.NewGuid().ToString()+DateTime.UtcNow.ToString(); // Genera GUID como string
         [Required]
         public string User { get; set; }
         [Required]

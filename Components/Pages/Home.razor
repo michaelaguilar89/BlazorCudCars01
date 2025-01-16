@@ -246,6 +246,7 @@
         //   await LocalStorage.SetItemAsync("cars", cars); // Guardado asincrónico
 
         var response = await CarService.Delete(id);
+        cars = await CarService.Get();
 
     }
 }

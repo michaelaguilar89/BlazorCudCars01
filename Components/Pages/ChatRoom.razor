@@ -81,6 +81,7 @@
 
     private async Task SendMessage()
     {
+        newMessage.Id = Guid.NewGuid().ToString();
         newMessage.Date = DateTime.SpecifyKind(DateTime.Now, DateTimeKind.Utc); 
         await hubConnection.SendAsync("SendMessage",newMessage.Date,newMessage.User ,newMessage.Text);
 
