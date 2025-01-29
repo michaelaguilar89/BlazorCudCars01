@@ -47,5 +47,28 @@ namespace BlazorAppCarsCrud.Services
                 return null;
             }
         }
+
+        public async Task<bool> Delete()
+        {
+            try
+            {
+                var list = await _context.Messages.ToListAsync();
+                if (list!=null)
+                {
+                  
+                         _context.Messages.RemoveRange(list);
+                        await _context.SaveChangesAsync();
+                    return true;
+                    
+                }
+                return false;
+            }
+            catch (Exception e)
+            {
+
+                Console.WriteLine("Error on Messages Service Delete Chat : " + DateTime.Now + " | " + e.Message);
+                return false;
+            }
+        }
     }
 }

@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BlazorAppCarsCrud")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dc39e104e6af1512f88564964eb5a9b25bc080e0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0c5da7c61810315881de469e32ce7936679c0f6e")]
 [assembly: System.Reflection.AssemblyProductAttribute("BlazorAppCarsCrud")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BlazorAppCarsCrud")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

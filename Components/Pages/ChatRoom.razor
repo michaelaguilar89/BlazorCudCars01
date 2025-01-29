@@ -29,14 +29,20 @@
             </div>
             <div class="mb-3">
                 <button type="submit" class="btn btn-primary">Enviar</button>
+                <button type="button" @onclick="DeleteChat" class="btn btn-danger">Clean Chat</button>
             </div>
 
 
         </EditForm>
 
+
     </div>
     <div class="col-md-8">
         <ul>
+            @if (status!=null)
+            {
+                <h3 class="text-center text-primary">@status</h3>
+            }
             @if ( messages==null)
             {
                 <p>Loading</p>
@@ -60,6 +66,7 @@
     private Message newMessage= new();
     private List<Message> messages = new List<Message>();
     public string status;
+    private string option = "Send";
     private HubConnection hubConnection;
 
     protected override async Task OnInitializedAsync()
@@ -68,30 +75,72 @@
             .WithUrl(Navigation.ToAbsoluteUri("/chathub"))
             .Build();
 
-        hubConnection.On<DateTime,string, string>("ReceiveMessage", (date,user, message) =>
+        hubConnection.On<DateTime,string, string>("ReceiveMessage", async (date,user, message) =>
         {
-            messages.Add(new Message {Date= date, User = user, Text = message });
-            InvokeAsync(StateHasChanged);
+            if (message.Equals("Delete"))
+            {
+
+                messages.Clear();
+                status = "Chat is clean by " + user;
+                messages.Add(new Message { Date = date, User = user, Text = message });
+                await InvokeAsync(StateHasChanged);
+            }else{
+                messages.Add(new Message { Date = date, User = user, Text = message });
+                await InvokeAsync(StateHasChanged);
+            }
+
+
         });
 
         await hubConnection.StartAsync();
 
-        messages =await messageService.Get();
+        await LoadChat();
     }
+
+    private async Task LoadChat() {
+
+        messages = await messageService.Get();
+    }
+
+    private async Task DeleteChat(){
+        option = "Delete";
+        var result= await messageService.Delete();
+        if (result)
+        {
+            status = "Chat is clean!";
+        }
+        if (result==false)
+        {
+            status = "Error : Chat isn't clean ";
+        }
+        await SendMessage();
+        await LoadChat();
+        option = "Send";
+
+    }
+
+
+
 
     private async Task SendMessage()
     {
+        status = null;
+
         newMessage.Id = Guid.NewGuid().ToString();
         newMessage.Date = DateTime.SpecifyKind(DateTime.Now, DateTimeKind.Utc); 
-        await hubConnection.SendAsync("SendMessage",newMessage.Date,newMessage.User ,newMessage.Text);
-
-
+        if (option.Equals("Delete"))
+        {
+            newMessage.Text = "Delete";
+        
+           
+        }
+        await hubConnection.SendAsync("SendMessage", newMessage.Date, newMessage.User, newMessage.Text);
         var state = await messageService.AddAsync(newMessage);
-        if (state!="1")
+        if (state != "1")
         {
             status = state;
         }
-           newMessage.Text = string.Empty;
+        newMessage.Text = string.Empty;
         
     }
 
