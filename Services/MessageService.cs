@@ -26,7 +26,7 @@ namespace BlazorAppCarsCrud.Services
             }
             catch (Exception e)
             {
-                Console.WriteLine("Error on Messages Service Add : " + DateTime.Now + " | " + e.Message);
+                Console.Error.WriteLine("Error on Messages Service Add : " + DateTime.Now + " | " + e.Message);
 
                 return e.Message;
             }
@@ -43,7 +43,7 @@ namespace BlazorAppCarsCrud.Services
             catch (Exception e)
             {
 
-                Console.WriteLine("Error on Messages Service Get : " + DateTime.Now + " | " + e.Message);
+                Console.Error.WriteLine("Error on Messages Service Get : " + DateTime.Now + " | " + e.Message);
                 return null;
             }
         }
@@ -66,7 +66,7 @@ namespace BlazorAppCarsCrud.Services
             catch (Exception e)
             {
 
-                Console.WriteLine("Error on Messages Service Delete Chat : " + DateTime.Now + " | " + e.Message);
+                Console.Error.WriteLine("Error on Messages Service Delete Chat : " + DateTime.Now + " | " + e.Message);
                 return false;
             }
         }

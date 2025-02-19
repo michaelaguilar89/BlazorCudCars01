@@ -43,7 +43,7 @@ namespace BlazorAppCarsCrud.Services
             catch (Exception e)
             {
 
-                Console.WriteLine("Error : " + e.Message);
+                Console.WriteLine("Error on Get Cars, Date :" + DateTime.Now + " | " + e.Message);
                 return null;
             }
 
@@ -69,7 +69,7 @@ namespace BlazorAppCarsCrud.Services
             }
             catch (Exception e)
             {
-
+               
                 return e.Message;
             }
 
