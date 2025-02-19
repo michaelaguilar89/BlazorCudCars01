@@ -3,16 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\T470\\Documents\\Projects\\BlazorAppCarsCrud\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F33B8E4D-FD2D-4D4D-B882-CA51B6700BFC}|BlazorAppCarsCrud.csproj|c:\\users\\t470\\documents\\projects\\blazorappcarscrud\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{F33B8E4D-FD2D-4D4D-B882-CA51B6700BFC}|BlazorAppCarsCrud.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{F33B8E4D-FD2D-4D4D-B882-CA51B6700BFC}|BlazorAppCarsCrud.csproj|c:\\users\\t470\\documents\\projects\\blazorappcarscrud\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F33B8E4D-FD2D-4D4D-B882-CA51B6700BFC}|BlazorAppCarsCrud.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{F33B8E4D-FD2D-4D4D-B882-CA51B6700BFC}|BlazorAppCarsCrud.csproj|c:\\users\\t470\\documents\\projects\\blazorappcarscrud\\components\\pages\\chatroom.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F33B8E4D-FD2D-4D4D-B882-CA51B6700BFC}|BlazorAppCarsCrud.csproj|solutionrelative:components\\pages\\chatroom.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F33B8E4D-FD2D-4D4D-B882-CA51B6700BFC}|BlazorAppCarsCrud.csproj|c:\\users\\t470\\documents\\projects\\blazorappcarscrud\\services\\messageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F33B8E4D-FD2D-4D4D-B882-CA51B6700BFC}|BlazorAppCarsCrud.csproj|solutionrelative:services\\messageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{F33B8E4D-FD2D-4D4D-B882-CA51B6700BFC}|BlazorAppCarsCrud.csproj|c:\\users\\t470\\documents\\projects\\blazorappcarscrud\\services\\carservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F33B8E4D-FD2D-4D4D-B882-CA51B6700BFC}|BlazorAppCarsCrud.csproj|solutionrelative:services\\carservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F33B8E4D-FD2D-4D4D-B882-CA51B6700BFC}|BlazorAppCarsCrud.csproj|c:\\users\\t470\\documents\\projects\\blazorappcarscrud\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F33B8E4D-FD2D-4D4D-B882-CA51B6700BFC}|BlazorAppCarsCrud.csproj|solutionrelative:data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F33B8E4D-FD2D-4D4D-B882-CA51B6700BFC}|BlazorAppCarsCrud.csproj|c:\\users\\t470\\documents\\projects\\blazorappcarscrud\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{F33B8E4D-FD2D-4D4D-B882-CA51B6700BFC}|BlazorAppCarsCrud.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -34,39 +46,76 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\T470\\Documents\\Projects\\BlazorAppCarsCrud\\appsettings.json",
-              "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "C:\\Users\\T470\\Documents\\Projects\\BlazorAppCarsCrud\\appsettings.json",
-              "RelativeToolTip": "appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAC/AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-02-19T18:57:50.981Z",
+              "DocumentIndex": 2,
+              "Title": "MessageService.cs",
+              "DocumentMoniker": "C:\\Users\\T470\\Documents\\Projects\\BlazorAppCarsCrud\\Services\\MessageService.cs",
+              "RelativeDocumentMoniker": "Services\\MessageService.cs",
+              "ToolTip": "C:\\Users\\T470\\Documents\\Projects\\BlazorAppCarsCrud\\Services\\MessageService.cs",
+              "RelativeToolTip": "Services\\MessageService.cs",
+              "ViewState": "AgIAADYAAAAAAAAAAAAAwEoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-19T19:50:13.266Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "ChatRoom.razor",
+              "DocumentMoniker": "C:\\Users\\T470\\Documents\\Projects\\BlazorAppCarsCrud\\Components\\Pages\\ChatRoom.razor",
+              "RelativeDocumentMoniker": "Components\\Pages\\ChatRoom.razor",
+              "ToolTip": "C:\\Users\\T470\\Documents\\Projects\\BlazorAppCarsCrud\\Components\\Pages\\ChatRoom.razor",
+              "RelativeToolTip": "Components\\Pages\\ChatRoom.razor",
+              "ViewState": "AgIAAEYAAAAAAAAAAAAAAG0AAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-19T19:49:38.448Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\T470\\Documents\\Projects\\BlazorAppCarsCrud\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "Data\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\T470\\Documents\\Projects\\BlazorAppCarsCrud\\Data\\AppDbContext.cs",
+              "RelativeToolTip": "Data\\AppDbContext.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAwwBUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-19T19:49:08.385Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\T470\\Documents\\Projects\\BlazorAppCarsCrud\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\T470\\Documents\\Projects\\BlazorAppCarsCrud\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-02-19T18:57:50.981Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\T470\\Documents\\Projects\\BlazorAppCarsCrud\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\T470\\Documents\\Projects\\BlazorAppCarsCrud\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAAABEAAAAeAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\T470\\Documents\\Projects\\BlazorAppCarsCrud\\Program.cs*",
+              "RelativeToolTip": "Program.cs*",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-29T23:37:01.442Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "CarService.cs",
               "DocumentMoniker": "C:\\Users\\T470\\Documents\\Projects\\BlazorAppCarsCrud\\Services\\CarService.cs",
               "RelativeDocumentMoniker": "Services\\CarService.cs",
               "ToolTip": "C:\\Users\\T470\\Documents\\Projects\\BlazorAppCarsCrud\\Services\\CarService.cs",
               "RelativeToolTip": "Services\\CarService.cs",
-              "ViewState": "AgIAADcAAAAAAAAAAAAwwEsAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAFAAAAAAAAAAAAAuwGMAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-29T03:25:36.835Z",
               "EditorCaption": ""

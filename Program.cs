@@ -21,6 +21,15 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(connectionString));
 builder.Services.AddScoped<CarService>();
 builder.Services.AddScoped<MessageService>();
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(policy =>
+    {
+        policy.AllowAnyOrigin()
+              .AllowAnyMethod()
+              .AllowAnyHeader();
+    });
+});
 
 // Add SignalR service
 builder.Services.AddSignalR();  
@@ -45,6 +54,8 @@ app.UseRouting(); // Asegúrate de que UseRouting esté antes de MapRazorComponent
 // Añadir protección contra falsificación
 app.UseAntiforgery();
 
+
+app.UseCors();
 
 app.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode();

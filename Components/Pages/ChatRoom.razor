@@ -1,5 +1,6 @@
 ﻿@page "/chat"
 @using BlazorAppCarsCrud.Models
+@using Microsoft.AspNetCore.Http.Connections
 @using Microsoft.AspNetCore.SignalR.Client
 @using BlazorAppCarsCrud.Services
 @inject NavigationManager Navigation
@@ -68,7 +69,7 @@
     public string status;
     private string option = "Send";
     private HubConnection hubConnection;
-
+    /*
     protected override async Task OnInitializedAsync()
     {
         hubConnection = new HubConnectionBuilder()
@@ -97,7 +98,50 @@
         await LoadChat();
     }
 
-    private async Task LoadChat() {
+
+    */
+   
+    protected override async Task OnInitializedAsync()
+    {
+        hubConnection = new HubConnectionBuilder()
+            .WithUrl(Navigation.ToAbsoluteUri("/chathub"), options =>
+            {
+                options.Transports = HttpTransportType.LongPolling; // Forzar LongPolling
+            })
+            .WithAutomaticReconnect()
+            .Build();
+
+        hubConnection.On<DateTime, string, string>("ReceiveMessage", async (date, user, message) =>
+        {
+            if (message.Equals("Delete"))
+            {
+                messages.Clear();
+                status = "Chat is clean by " + user;
+                messages.Add(new Message { Date = date, User = user, Text = message });
+            }
+            else
+            {
+                messages.Add(new Message { Date = date, User = user, Text = message });
+            }
+
+            await InvokeAsync(StateHasChanged);
+        });
+
+        try
+        {
+            await hubConnection.StartAsync();
+            status = "Conectado al chat";
+        }
+        catch (Exception ex)
+        {
+            status = $"Error al conectar: {ex.Message}";
+        }
+
+        await LoadChat();
+    }
+
+   
+   private async Task LoadChat() {
 
         messages = await messageService.Get();
     }
